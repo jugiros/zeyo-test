@@ -1,0 +1,27 @@
+<div class="proceso-list">
+  <h2>Procesos de Negocio</h2>
+  <div *ngIf="loading" class="loading">Cargando...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="!loading && procesos.length === 0" class="empty">No hay procesos registrados</div>
+  <div *ngFor="let proceso of procesos" class="proceso-card">
+    <div class="proceso-header">
+      <h3>Paso {{ proceso.paso }}: {{ proceso.nombre }}</h3>
+      <button (click)="onEdit(proceso)" class="btn-edit">Editar</button>
+    </div>
+    <p *ngIf="proceso.descripcion">{{ proceso.descripcion }}</p>
+    <div class="proceso-meta">
+      <small>Hash: {{ proceso.hash_actual?.substring(0, 16) }}...</small>
+      <small>Creado: {{ formatDate(proceso.fecha_creacion) }}</small>
+    </div>
+    <div *ngIf="showHistory[proceso.id!]" class="historial">
+      <h4>Historial de Cambios</h4>
+      <div *ngFor="let cambio of proceso.historial_cambios" class="cambio">
+        <span>{{ cambio.accion }} - {{ formatDate(cambio.fecha) }}</span>
+        <small>Hash: {{ cambio.hash.substring(0, 16) }}...</small>
+      </div>
+    </div>
+    <button (click)="toggleHistory(proceso.id!)" class="btn-history">
+      {{ showHistory[proceso.id!] ? 'Ocultar' : 'Ver' }} Historial
+    </button>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+.proceso-list { 
+  padding: 20px; 
+}
+
+.proceso-card { 
+  border: 1px solid #ddd; 
+  margin: 10px 0; 
+  padding: 15px; 
+  border-radius: 5px; 
+}
+
+.proceso-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.btn-edit, .btn-history { 
+  padding: 5px 10px; 
+  margin: 5px; 
+  border: none; 
+  border-radius: 3px; 
+  cursor: pointer; 
+}
+
+.btn-edit { 
+  background: #007bff; 
+  color: white; 
+}
+
+.btn-history { 
+  background: #6c757d; 
+  color: white; 
+}
+
+.proceso-meta { 
+  display: flex; 
+  gap: 15px; 
+  margin: 10px 0; 
+}
+
+.proceso-meta small { 
+  color: #666; 
+}
+
+.historial { 
+  background: #f8f9fa; 
+  padding: 10px; 
+  margin: 10px 0; 
+  border-radius: 3px; 
+}
+
+.cambio { 
+  display: flex; 
+  justify-content: space-between; 
+  padding: 5px 0; 
+  border-bottom: 1px solid #eee; 
+}
+
+.loading, .error, .empty { 
+  text-align: center; 
+  padding: 20px; 
+}
+
+.error { 
+  color: #dc3545; 
+}

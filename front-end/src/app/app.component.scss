@@ -1,0 +1,37 @@
+.app-container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+
+header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 30px; 
+  padding-bottom: 20px; 
+  border-bottom: 2px solid #007bff; 
+}
+
+h1 { 
+  color: #333; 
+  margin: 0; 
+}
+
+.btn-toggle { 
+  padding: 10px 20px; 
+  background: #007bff; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 14px; 
+}
+
+.btn-toggle:hover { 
+  background: #0056b3; 
+}
+
+main { 
+  min-height: 400px; 
+}

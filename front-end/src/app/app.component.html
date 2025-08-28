@@ -1,0 +1,22 @@
+<div class="app-container">
+  <header>
+    <h1>Sistema de Gestión de Procesos de Negocio</h1>
+    <button (click)="showForm = !showForm" class="btn-toggle">
+      {{ showForm ? 'Ver Lista' : 'Nuevo Proceso' }}
+    </button>
+  </header>
+  
+  <main>
+    <app-proceso-form 
+      *ngIf="showForm"
+      [proceso]="selectedProceso"
+      (saved)="onProcesoSaved()"
+      (cancelled)="onFormCancelled()">
+    </app-proceso-form>
+    
+    <app-proceso-list 
+      *ngIf="!showForm"
+      (editProceso)="onEditProceso($event)">
+    </app-proceso-list>
+  </main>
+</div>
